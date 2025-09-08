@@ -37,6 +37,8 @@ const Header: React.FC = () => {
 
                 <div className="header-actions">
                     <div className="user-menu">
+                        <button className="btn btn-outline" onClick={() => navigate('/register')}>ثبت نام</button>
+                        &nbsp;
                         <button className="btn btn-outline" onClick={() => navigate('/login')}>ورود</button>
                     </div>
                     <button

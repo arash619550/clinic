@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import { createContext, useState } from 'react';
 import Specialties from './pages/Specialties';
 import Patients from './pages/Patients'
+import Register from './pages/Register';
 /**
  * کامپوننت اصلی برنامه
  * 
@@ -47,6 +48,7 @@ function App() {
                         <Route path="reports" element={<div>صفحه گزارشات</div>} />
                         <Route path="settings" element={<div>صفحه تنظیمات</div>} />
                         <Route path='/login' element={<Login></Login>}></Route>
+                        <Route path='/register' element={<Register></Register>}></Route>
                     </Route>
                 </Routes>
             </Router>
