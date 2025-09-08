@@ -7,6 +7,7 @@ import { createContext, useState } from 'react';
 import Specialties from './pages/Specialties';
 import Patients from './pages/Patients'
 import Register from './pages/Register';
+import Doctors from './pages/Doctors'
 /**
  * کامپوننت اصلی برنامه
  * 
@@ -40,13 +41,13 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Layout />}>
                         <Route index element={<Dashboard />} />
-                        <Route path="patients" element={<Patients></Patients>} />
-                        <Route path="doctors" element={<div>صفحه پزشکان</div>} />
-                        <Route path="appointments" element={<div>صفحه نوبت‌ها</div>} />
-                        <Route path="specialties" element={<Specialties></Specialties>} />
-                        <Route path="schedules" element={<div>صفحه برنامه‌ها</div>} />
-                        <Route path="reports" element={<div>صفحه گزارشات</div>} />
-                        <Route path="settings" element={<div>صفحه تنظیمات</div>} />
+                        <Route path="/patients" element={<Patients></Patients>} />
+                        <Route path="/doctors" element={<Doctors></Doctors >} />
+                        <Route path="/appointments" element={<div>صفحه نوبت‌ها</div>} />
+                        <Route path="/specialties" element={<Specialties></Specialties>} />
+                        <Route path="/schedules" element={<div>صفحه برنامه‌ها</div>} />
+                        <Route path="/reports" element={<div>صفحه گزارشات</div>} />
+                        <Route path="/settings" element={<div>صفحه تنظیمات</div>} />
                         <Route path='/login' element={<Login></Login>}></Route>
                         <Route path='/register' element={<Register></Register>}></Route>
                     </Route>
