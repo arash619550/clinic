@@ -8,6 +8,7 @@ import Specialties from './pages/Specialties';
 import Patients from './pages/Patients'
 import Register from './pages/Register';
 import Doctors from './pages/Doctors'
+import Appointments from './pages/Appointments';
 /**
  * کامپوننت اصلی برنامه
  * 
@@ -43,7 +44,7 @@ function App() {
                         <Route index element={<Dashboard />} />
                         <Route path="/patients" element={<Patients></Patients>} />
                         <Route path="/doctors" element={<Doctors></Doctors >} />
-                        <Route path="/appointments" element={<div>صفحه نوبت‌ها</div>} />
+                        <Route path="/appointments" element={<Appointments></Appointments>} />
                         <Route path="/specialties" element={<Specialties></Specialties>} />
                         <Route path="/schedules" element={<div>صفحه برنامه‌ها</div>} />
                         <Route path="/reports" element={<div>صفحه گزارشات</div>} />
