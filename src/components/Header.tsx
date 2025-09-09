@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-
+import { LoginContext } from '../App'
 /**
  * کامپوننت Header برنامه
  * 
@@ -12,7 +12,11 @@ import { Link, useNavigate } from 'react-router-dom';
  * 
  * @returns {JSX.Element} هدر برنامه
  */
+
 const Header: React.FC = () => {
+    const LoginContextResult = useContext(LoginContext)
+    console.log();
+
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const navigate = useNavigate()
     return (
@@ -36,11 +40,15 @@ const Header: React.FC = () => {
                 </nav>
 
                 <div className="header-actions">
-                    <div className="user-menu">
-                        <button className="btn btn-outline" onClick={() => navigate('/register')}>ثبت نام</button>
-                        &nbsp;
-                        <button className="btn btn-outline" onClick={() => navigate('/login')}>ورود</button>
-                    </div>
+                    {LoginContextResult?.login ?
+                        <>
+                            <button className="btn btn-outline" onClick={() => { navigate('/'); LoginContextResult.setLogin(false) }}>خروج</button>
+                        </> : <div className="user-menu">
+                            <button className="btn btn-outline" onClick={() => navigate('/register')}>ثبت نام</button>
+                            &nbsp;
+                            <button className="btn btn-outline" onClick={() => navigate('/login')}>ورود</button>
+                        </div>}
+
                     <button
                         className="mobile-menu-btn"
                         onClick={() => setIsMenuOpen(!isMenuOpen)}>
