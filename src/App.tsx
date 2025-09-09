@@ -10,6 +10,7 @@ import Register from './pages/Register';
 import Doctors from './pages/Doctors'
 import Appointments from './pages/Appointments';
 import Schedules from './pages/Schedules';
+import NotFound from './pages/NotFound';
 /**
  * کامپوننت اصلی برنامه
  * 
@@ -52,10 +53,11 @@ function App() {
                         <Route path="/settings" element={<div>صفحه تنظیمات</div>} />
                         <Route path='/login' element={<Login></Login>}></Route>
                         <Route path='/register' element={<Register></Register>}></Route>
+                        <Route path='*' element={<NotFound></NotFound>} ></Route>
                     </Route>
                 </Routes>
             </Router>
-        </LoginContext.Provider>
+        </LoginContext.Provider >
     );
 }
 

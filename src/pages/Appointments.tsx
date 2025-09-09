@@ -38,7 +38,7 @@ export default function Appointments() {
         <>
             <h2>قرار ملاقات ها</h2>
             <ul>
-                {appointments.map((item, index) => <>{item.doctorSchedule?.isAvailable && <li key={index}><span>اسم بیمار : </span>{item.patient?.fullName}<span> نام دکتر : </span>{item.doctorSchedule?.doctor?.fullName}<span> در روز </span>{item.doctorSchedule?.dayDisplay}<span> و ساعت </span>{item.doctorSchedule?.startTimeDisplay}<span> الی </span>{item.doctorSchedule?.endTimeDisplay}<span> </span>{item.doctorScheduleId}</li>}</>)}
+                {appointments.map((item, index) => <>{item.doctorSchedule?.isAvailable && <li className='li' key={index}><span>اسم بیمار : </span>{item.patient?.fullName}<span> نام دکتر : </span>{item.doctorSchedule?.doctor?.fullName}<span> در روز </span>{item.doctorSchedule?.dayDisplay}<span> و ساعت </span>{item.doctorSchedule?.startTimeDisplay}<span> الی </span>{item.doctorSchedule?.endTimeDisplay}<span> </span>{item.doctorScheduleId}</li>}</>)}
             </ul>
             <form onSubmit={handleSubmit}>
                 <input type="text" placeholder='آی دی بیمار' value={patientId} onChange={e => setPatientId(e.target.value)} />
