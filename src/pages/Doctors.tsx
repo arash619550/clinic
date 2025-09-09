@@ -46,7 +46,7 @@ export default function Doctors() {
         <>
             <h2>لیست دکتر ها</h2>
             <ul>
-                {doctors.map(item => <div key={item.id}><li>{item.fullName}<span> با شماره مجوز پزشکی </span>{item.medicalLicenseNumber}<span> تلفن </span>{item.phoneNumber}<span> تخصص </span>{item.specialty.name}</li></div>)}
+                {doctors.map(item => item.schedulesCount > 0 && <div key={item.id}><li>{item.fullName}<span> با شماره مجوز پزشکی </span>{item.medicalLicenseNumber}<span> تلفن </span>{item.phoneNumber}<span> تخصص </span>{item.specialty.name}</li></div>)}
             </ul>
             <form onSubmit={handleDoctors}>
                 <input type="text" placeholder='اسم' value={firstName} onChange={e => setFirstName(e.target.value)} />

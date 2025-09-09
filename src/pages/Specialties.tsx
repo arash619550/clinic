@@ -1,11 +1,11 @@
 import '../styles/common.scss'
 import axios from 'axios';
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 export default function Specialties() {
     const [specialties, setSpecialties] = useState<any[]>([])
     const [increaseSpecialties, setIncreaseSpecialties] = useState<string>("")
     const inputRef = useRef<HTMLInputElement>(null)
-    useLayoutEffect(() => {
+    useEffect(() => {
         inputRef.current?.focus()
     }, [])
     useEffect(() => {
@@ -38,7 +38,7 @@ export default function Specialties() {
             <h2>لیست تخصص ها</h2>
             <p>تعداد دکتر</p>
             <ul>
-                {specialties.map(item => <div className='div1'><span>{item.doctorsCount}</span> <li key={item.id}>{item.name}</li></div>)}
+                {specialties.map(item => <div className='div1' key={item.id}><span>{item.doctorsCount}</span> <li key={item.id}>{item.name}</li></div>)}
             </ul>
             <form onSubmit={increaseFunction}>
                 <input type="text" placeholder='تخصص جدید' value={increaseSpecialties} onChange={e => setIncreaseSpecialties(e.target.value)} ref={inputRef} />
